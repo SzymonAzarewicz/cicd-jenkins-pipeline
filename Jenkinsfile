@@ -40,7 +40,7 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                sh "docker run -p ${env.PORT}:${env.PORT} -d node${env.PORT}:v1.0"
+                sh "docker run -p ${env.PORT}:3000 -d node${env.PORT}:v1.0"
             }
         }
     }
