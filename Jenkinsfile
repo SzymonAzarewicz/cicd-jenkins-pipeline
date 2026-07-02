@@ -26,11 +26,11 @@ pipeline {
             steps {
                 script{
 
-                    if(env.BRANCH_NAME == 'main')
+                    if(env.BRANCH_NAME == 'main' || params.branch == 'main')
                     {
                         env.PORT = 3000
                     }
-                    else if(env.BRANCH_NAME == 'dev')
+                    else if(env.BRANCH_NAME == 'dev' || params.branch == 'dev')
                     {
                         env.PORT = 3001
                     }
